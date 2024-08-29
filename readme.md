@@ -1,6 +1,142 @@
 # Javascript
 
-Concetto fondamentale
+Dai concetti Base:
+
+# Tipi di dato
+
+```bash
+
+let name = "Alice";  // String
+const age = 28;      // Number
+var isStudent = true; // Boolean
+let course = null;   // Null
+let grade;           // Undefined
+
+console.log(`Name: ${name}, Age: ${age}, Student: ${isStudent}, Course: ${course}, Grade: ${grade}`);
+
+```
+
+# funzioni e scope
+
+```bash
+
+// Funzione Tradizionale
+function add(a, b) {
+    return a + b;
+}
+
+// Funzione Freccia
+const multiply = (a, b) => a * b;
+
+console.log(add(5, 3));         // 8
+console.log(multiply(5, 3));    // 15
+
+
+```
+
+# gli oggetti
+
+```bash
+
+const person = {
+    firstName: "Alice",
+    lastName: "Smith",
+    fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+};
+
+console.log(person.fullName()); // Alice Smith
+
+```
+
+
+# Ereditarietà Prototipale
+
+```bash
+
+function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+
+Person.prototype.fullName = function() {
+    return `${this.firstName} ${this.lastName}`;
+};
+
+const person1 = new Person("Bob", "Brown");
+console.log(person1.fullName()); // Bob Brown
+
+```
+
+
+# Promises e Fetch API
+
+Le Promises sono fondamentali per gestire operazioni asincrone, come le richieste HTTP. La Fetch API è un'interfaccia moderna per effettuare richieste HTTP
+
+```bash
+
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+
+
+```
+
+
+
+# Async/Await
+
+Async/Await è una sintassi che semplifica il lavoro con Promises, rendendo il codice più leggibile e mantenendo il controllo del flusso.
+
+```bash
+
+async function fetchData() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+fetchData();
+
+
+```
+
+
+
+# Classi e Ereditarietà
+
+```bash
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a noise.`);
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} barks.`);
+    }
+}
+
+const dog = new Dog('Rex');
+dog.speak();  // Rex barks.
+
+
+```
+
+
+
 
 ## Descrizione
 
@@ -33,7 +169,7 @@ Puoi creare una Promise usando il costruttore Promise. Prende una funzione chiam
     reject(reason): viene chiamata se l'operazione fallisce e passa il motivo del fallimento.
 
 
-## Impostante
+## Importante
 
 La funzione fetch() è una delle API più moderne e potenti in JavaScript per eseguire richieste HTTP asincrone. Viene utilizzata per fare richieste di rete, recuperare risorse come file o dati 
 da un server, ed è supportata dalla maggior parte dei browser moderni.
