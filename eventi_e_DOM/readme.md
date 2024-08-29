@@ -4,10 +4,14 @@ Eventi per interagire con il DOM
 
 ## Descrizione
 
+```bash
+
 <button id="myButton">Click me</button>
         <p id="myText"></p>
 
-# è bene capire che all'ID "myButton" è associato
+```
+
+## è bene capire che all'ID "myButton" è associato
 
 ```bash
 
